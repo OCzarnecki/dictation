@@ -51,7 +51,7 @@ class AudioRecordingThread(threading.Thread):
         self.audio = np.concatenate(chunks)
 
     def get_audio(self):
-        return self.audio[5000:]
+        return self.audio[int(AudioRecordingThread.RATE * 0.25):]
 
     def stop(self):
         self._stop_event.set()
