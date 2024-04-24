@@ -8,7 +8,7 @@ import os
 
 from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
-import pygame
+import pygame  # noqa
 
 app = Flask(__name__)
 audio_recording_thread = None
@@ -18,7 +18,7 @@ model = None
 class AudioRecordingThread(threading.Thread):
     RATE = 16000
     CHUNKSIZE = int(RATE * 0.5)
-    MAX_SECONDS = 30
+    MAX_SECONDS = 120
 
     def __init__(self):
         super().__init__()
